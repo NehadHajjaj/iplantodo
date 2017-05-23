@@ -1,0 +1,5 @@
+bin/
+debug/
+dist/
+node_modules/
+bower_components/
