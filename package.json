@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack -p --config webpack.config.js",
+    "build-test": "webpack --config webpack.test.js",
     "go": "webpack-dev-server --open"
   },
   "author": "",

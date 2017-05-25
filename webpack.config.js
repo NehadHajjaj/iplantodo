@@ -1,12 +1,10 @@
 const path = require('path');
-var __dirname = path.dirname('./');
-console.error(__dirname);
-
 module.exports = {
+  target: "web",
   entry: './app/main.ts',
   output: {
-    filename: './wwwroot/js/bundle.js',
-    path: path.resolve(__dirname, "wwwroot/dist"),
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, "wwwroot/js"),
   },
   devServer: {
     contentBase: "./",

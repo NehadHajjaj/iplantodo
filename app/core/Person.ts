@@ -8,4 +8,4 @@
 	sayHi() {
 		console.log(this.name + ": hello!");
 	}
-}  
+}
