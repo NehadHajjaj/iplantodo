@@ -1,8 +1,16 @@
 {
     "compilerOptions": {
+        "removeComments": true,
         "outDir": "./dist/",
-        "target": "es6",
-        "module": "es6",
-        "sourceMap": true
-    }
+        //"outFile": "./dist/bundle.js",
+        "target": "es2015",
+        "module": "es2015",
+        //"moduleResolution": "node",
+        //"declaration": true,
+        "sourceMap": true,
+        "lib": ["es2015", "dom"]
+    },
+    "files": [
+        "./app/main.ts"
+    ]
 }
