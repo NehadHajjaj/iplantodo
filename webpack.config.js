@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
   target: "web",
   entry: './app/main.ts',
@@ -16,8 +18,21 @@ module.exports = {
     rules: [
       {
         test: /\.ts?$/,
-        exclude: /node_modules/,
-        use: ['babel-loader', 'ts-loader']
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env'],
+              //plugins: ['transform-runtime']
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              configFileName: "tsconfig.json"
+            }
+          }]
       },
       {
         enforce: 'pre',
@@ -34,5 +49,8 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js"]
   },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin()
+  ],
   devtool: 'inline-source-map'
 };
